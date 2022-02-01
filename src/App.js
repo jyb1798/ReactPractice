@@ -1,7 +1,7 @@
 import React from "react";
-import ExpenseItem from "./components/ExpensesItem/ExpenseItem";
-import { expense } from "./components/ExpensesItem/Expense";
-import "./components/ExpensesItem/Expense.css";
+import ExpenseItem from "./components/Expenses/ExpenseItem";
+import { expense } from "./components/Expenses/Expense";
+import "./components/Expenses/Expense.css";
 
 const App = () => {
   return (
