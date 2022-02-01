@@ -1,12 +1,11 @@
 import React from "react";
+import ExpenseItem from "./components/ExpensesItem/ExpenseItem";
 
 const App = () => {
   return (
     <div>
-      <h2>
-        Let's Get Started!
-        <p>This is also visible</p>
-      </h2>
+      <h2>Let's Get Started!</h2>
+      <ExpenseItem />
     </div>
   );
 };
