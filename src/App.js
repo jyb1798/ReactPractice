@@ -1,12 +1,13 @@
 import React from "react";
 import ExpenseItem from "./components/Expenses/ExpenseItem";
 import { expense } from "./components/Expenses/Expense";
+import NewExpense from "./components/NewExpense/NewExpense";
 import "./components/Expenses/Expense.css";
 
 const App = () => {
   return (
     <div className="expenses">
-      <h2>Let's Get Started!</h2>
+      <NewExpense />
       {expense.map((e) => (
         <ExpenseItem
           key={e.id}
