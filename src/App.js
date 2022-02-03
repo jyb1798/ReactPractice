@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-// import NewExpense from "./components/NewExpense/NewExpense";
-// import Expenses from "./components/Expenses/Expenses";
-import FilterTest from "./Test/FilterTest";
+import NewExpense from "./components/NewExpense/NewExpense";
+import Expenses from "./components/Expenses/Expenses";
 
 const DUMMY_EXPENSE = [
   {
@@ -43,9 +42,8 @@ const App = () => {
 
   return (
     <div>
-      {/* <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses items={expenses} /> */}
-      <FilterTest />
+      <NewExpense onAddExpense={addExpenseHandler} />
+      <Expenses items={expenses} />
     </div>
   );
 };
