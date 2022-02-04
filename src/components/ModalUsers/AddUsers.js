@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./AddUserModal.css";
 
-const AddUsers = () => {
+const AddUsers = (props) => {
   const [enteredUsername, setEnteredUsername] = useState("");
   const [enteredUserage, setEnteredUserage] = useState("");
 
@@ -16,7 +16,8 @@ const AddUsers = () => {
     if (+enteredUserage < 1) {
       return;
     }
-    console.log(enteredUsername, enteredUserage);
+    props.onAddUser(enteredUsername, enteredUserage);
+    // console.log(enteredUsername, enteredUserage);
     setEnteredUsername("");
     setEnteredUserage("");
   };
@@ -30,23 +31,25 @@ const AddUsers = () => {
   };
 
   return (
-    <form onSubmit={addUserHandler}>
-      <label htmlFor="username">Username</label>
-      <input
-        type="text"
-        id="username"
-        value={enteredUsername}
-        onChange={usernameChangeHandler}
-      />
-      <label htmlFor="username">Age (Years)</label>
-      <input
-        type="number"
-        id="age"
-        value={enteredUserage}
-        onChange={userageChangeHandler}
-      />
-      <button type="submit">Add User</button>
-    </form>
+    <>
+      <form onSubmit={addUserHandler}>
+        <label htmlFor="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          value={enteredUsername}
+          onChange={usernameChangeHandler}
+        />
+        <label htmlFor="username">Age (Years)</label>
+        <input
+          type="number"
+          id="age"
+          value={enteredUserage}
+          onChange={userageChangeHandler}
+        />
+        <button type="submit">Add User</button>
+      </form>
+    </>
   );
 };
 
