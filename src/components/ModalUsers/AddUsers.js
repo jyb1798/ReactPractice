@@ -7,7 +7,18 @@ const AddUsers = () => {
 
   const addUserHandler = (event) => {
     event.preventDefault();
+    if (
+      enteredUsername.trim().length === 0 ||
+      enteredUserage.trim().length === 0
+    ) {
+      return;
+    }
+    if (+enteredUserage < 1) {
+      return;
+    }
     console.log(enteredUsername, enteredUserage);
+    setEnteredUsername("");
+    setEnteredUserage("");
   };
 
   const usernameChangeHandler = (event) => {
@@ -21,9 +32,19 @@ const AddUsers = () => {
   return (
     <form onSubmit={addUserHandler}>
       <label htmlFor="username">Username</label>
-      <input type="text" id="username" onChange={usernameChangeHandler} />
+      <input
+        type="text"
+        id="username"
+        value={enteredUsername}
+        onChange={usernameChangeHandler}
+      />
       <label htmlFor="username">Age (Years)</label>
-      <input type="number" id="age" onChange={userageChangeHandler} />
+      <input
+        type="number"
+        id="age"
+        value={enteredUserage}
+        onChange={userageChangeHandler}
+      />
       <button type="submit">Add User</button>
     </form>
   );
