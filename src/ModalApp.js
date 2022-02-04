@@ -1,6 +1,5 @@
 import React from "react";
 import AddUsers from "./components/ModalUsers/AddUsers";
-import "./ModalApp.css";
 
 const ModalApp = () => {
   return (
