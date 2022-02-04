@@ -80,7 +80,9 @@ const ExpenseForm = (props) => {
           />
         </div>
       </div>
-      <button type="submit">Cancle</button>
+      <button type="button" onClick={props.onCancle}>
+        Cancle
+      </button>
       <button type="submit">Add Expense</button>
     </form>
   );
